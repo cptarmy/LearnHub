@@ -1,0 +1,232 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+body{
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.logo-bar{
+    display: flex;
+}
+.logo-bar h1{
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    font-style: normal;
+    padding: 3px;
+}
+.logo{
+    width:50px;
+    height: 50px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.navbar{
+    margin-top: 15px;
+}
+header a{
+    text-decoration: none;
+    color: black;
+    padding: 3px;
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    font-style: normal;
+}
+
+header a:hover{
+    color: rgb(219, 188, 8);
+}
+
+.sl {
+    display: flex;
+    gap: 10px;
+}
+
+.sl a{
+    text-decoration: none;
+}
+
+.sl h3{
+    color: #007bff;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.sl button{
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+
+} 
+
+
+.sl-btn{
+    background-image: linear-gradient(to right, rgb(207, 187, 0) , rgb(217, 255, 0));
+    margin-left: 2px;
+    padding: 10px;
+    border-radius: 20px;
+    color: black;
+    border: none;
+}
+
+.slm {
+    display: flex;
+    gap: 10px;
+}
+
+.slm a{
+    text-decoration: none;
+}
+
+.slm h3{
+    color: #007bff;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.slm button{
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+
+} 
+
+
+.slm-btn{
+    background-image: linear-gradient(to right, rgb(207, 187, 0) , rgb(217, 255, 0));
+    margin-left: 2px;
+    padding: 10px;
+    border-radius: 20px;
+    color: black;
+    border: none;
+}
+
+
+
+
+.hero{
+    gap: 50px;
+    padding: 50px;
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+
+.hd{
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-size: 30px;
+    font-style: normal;
+}
+.hd h1{
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 200px;
+    font-style: normal;
+}
+.typing-container {
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.cursor {
+    font-weight: bold;
+    margin-left: 5px;
+    animation: blink 0.6s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.typing{
+    color:rgb(0, 132, 255);
+}
+
+.mark{
+    width: 5000px;
+    color:rgb(0, 132, 255);
+}
+
+.logoba img{
+    width: 500px;
+    height: 500px;
+}
+
+
+.stats {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.6;
+}
+.highlight {
+    color: #ffcc00;
+    font-size: 28px;
+}
+
+.nonea{
+    text-decoration: none;
+    color:rgb(0, 132, 255);
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.side-navbar{
+
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0%;
+    left: -60%;
+    background-color: #10232C;
+    padding: 20px;
+    color: #fff;
+    transition: 2s;
+}
+
+.nav-tog{
+    display:none;
+}
+
+.side-navbar-link{
+   margin-bottom: 30px;
+   padding-inline: 20px;
+}
+
+.side-navbar-links a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .nav-tog{
+        display: block;
+    }
+    .navbar{
+        display: none;
+    }
+    .sl{
+        display: none;
+    }
+}

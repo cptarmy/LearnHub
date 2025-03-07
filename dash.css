@@ -1,0 +1,47 @@
+body {
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .loading-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .loading-bar {
+    width: 300px;
+    height: 12px;
+    background: linear-gradient(90deg, #333, #666, #333);
+    background-size: 200% 100%;
+    border-radius: 6px;
+    animation: shimmer 1.5s infinite linear;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  /* Sparkle effect */
+  .sparkle {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    background: radial-gradient(circle, #ffffff, transparent);
+    transform: rotate(45deg);
+    animation: sparkle-move 1.5s infinite linear;
+  }
+  
+  @keyframes sparkle-move {
+    0% { left: -20px; opacity: 0; transform: scale(0.5) rotate(0deg); }
+    50% { opacity: 1; }
+    100% { left: 320px; opacity: 0; transform: scale(1.2) rotate(180deg); }
+  }
+  

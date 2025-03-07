@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .loading-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .loading-bar {
+            width: 300px;
+            height: 12px;
+            background: linear-gradient(90deg, #333, #666, #333);
+            background-size: 200% 100%;
+            border-radius: 6px;
+            animation: shimmer 1.5s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .sparkle {
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            background: radial-gradient(circle, #ffffff, transparent);
+            transform: rotate(45deg);
+            animation: sparkle-move 1.5s infinite linear;
+        }
+        @keyframes sparkle-move {
+            0% { left: -20px; opacity: 0; transform: scale(0.5) rotate(0deg); }
+            50% { opacity: 1; }
+            100% { left: 320px; opacity: 0; transform: scale(1.2) rotate(180deg); }
+        }
+        .dashboard {
+            display: none;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+            animation: fadeIn 1s 0.5s forwards;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: #333;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container" id="loading">
+        <div class="sparkle"></div>
+        <div class="loading-bar"></div>
+        <div class="loading-bar"></div>
+    </div>
+    
+    <div class="dashboard" id="dashboard">
+        <header>
+            <h1>Welcome, Student</h1>
+        </header>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="courses.html">Courses</a>
+            <a href="quiz.html">AI Quiz Maker</a>
+            <a href="chatbot.html">AI Chatbot</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+        
+        <h1>Welcome to Your Student Dashboard!</h1>
+        
+    </div>
+    
+    <script>
+        window.onload = function() {
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+            }, 2000);
+        };
+        
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            const activeSection = document.getElementById(sectionId);
+            activeSection.style.display = 'block';
+            activeSection.style.opacity = 0;
+            activeSection.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                activeSection.style.opacity = 1;
+                activeSection.style.transform = 'translateY(0)';
+            }, 50);
+        }
+    </script>
+</body>
+</html>
